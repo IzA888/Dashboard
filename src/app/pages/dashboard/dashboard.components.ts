@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
-import { Widget } from '../../components/widget/widget';
-import { Saldo } from './widgets/saldo/saldo';
+import { Component, inject } from '@angular/core';
+import { WidgetComponent } from '../../components/widget/widget.component';
+import { DashboardService } from '../../services/dashboard.service';
+
 
 @Component({
   selector: 'app-dashoard.components',
-  imports: [Widget],
+  imports: [WidgetComponent],
+  providers: [DashboardService],
   templateUrl: './dashboard.components.html',
   styleUrl: './dashboard.components.css'
 })
-export class DashboardComponents {
+export default class DashboardComponents {
 
-  data: Widget ={
-    id: 1,
-    label: 'Saldo',
-    content: Saldo
-  }
+  store =inject(DashboardService);
+  
 }

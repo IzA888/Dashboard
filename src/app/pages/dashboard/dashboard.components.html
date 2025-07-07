@@ -1,4 +1,6 @@
 <h2>Dashboard app</h2>
-<app-widget [data] =  "data">
-   
-</app-widget>
+<div class=dashboard-widgets>
+    @for (w of store.widgets(); track w.id) {
+    <app-widget [data] =  "w"></app-widget>
+    }
+</div>
