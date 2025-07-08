@@ -10,5 +10,19 @@
     padding: 32px;
     box-sizing: border-box;
     border-radius: inherit;
+    border-block-style: solid;
     overflow: hidden;;
+}
+
+.container h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+}
+
+.settings-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--cor-primaria);
 }

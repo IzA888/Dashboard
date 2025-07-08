@@ -1,5 +1,8 @@
 <div class="container mat-elevation-z3">
     <h3 class="m-0">{{ data().label }}</h3>
+    <button mat-icon-button class="settings-button">
+        <mat-icon>Settings</mat-icon>
+    </button>
     <ng-contaner [ngComponentOutlet]="data().content"></ng-contaner>
  
 </div>

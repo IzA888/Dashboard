@@ -1,6 +1,24 @@
-<h2>Dashboard app</h2>
-<div class=dashboard-widgets>
-    @for (w of store.widgets(); track w.id) {
-    <app-widget [data] =  "w"></app-widget>
+<div class="header">
+    <h2>Dashboard app</h2>
+    <button mat-raised-button [mat-menu-trigger-for]="WidgetMenu">
+        <mat-icon fontSet="material-icons" fontIcon="add_circle_outline.svg"></mat-icon>
+        Add widget
+    </button>
+    <mat-menu #WidgetMenu="matMenu">
+        @for (widget of store.WidgetstoAdd(); track widget.id) {
+            <button mat-menu-item (onclick)="store.addWidget(widget)">
+                {{widget.label}}
+            </button>>
+        } @empty {
+            <button mat-menu-item>
+                No widgets available
+            </button>>
+        }
+    </mat-menu>
+</div>
+
+<div class="dashboard-widgtes">
+    @for (w of store.addedWidgets(); track w.id) {
+        <app-widget [data]="w"></app-widget>
     }
 </div>

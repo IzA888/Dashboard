@@ -1,5 +1,24 @@
+/* Use variáveis para cores e tamanhos */
+:root {
+  --cor-primaria: #ffff;
+  --cor-secundaria: #d6c5cb;
+  --espacamento-padrao: 16px;
+}
+
 .dashboard-widgtes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.mat-icon {
+    color: var(--cor-primaria);
+    font-palette: blue;
 }
