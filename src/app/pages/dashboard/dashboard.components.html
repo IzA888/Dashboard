@@ -1,12 +1,14 @@
 <div class="header">
     <h2>Dashboard app</h2>
+
     <button mat-raised-button [mat-menu-trigger-for]="WidgetMenu">
-        <mat-icon fontSet="material-icons" fontIcon="add_circle_outline.svg"></mat-icon>
-        Add widget
+        <mat-icon>add_circle_outline</mat-icon>
+        widget
     </button>
+
     <mat-menu #WidgetMenu="matMenu">
         @for (widget of store.WidgetstoAdd(); track widget.id) {
-            <button mat-menu-item (onclick)="store.addWidget(widget)">
+            <button mat-menu-item (click)="store.addWidget(widget)">
                 {{widget.label}}
             </button>>
         } @empty {
@@ -21,4 +23,26 @@
     @for (w of store.addedWidgets(); track w.id) {
         <app-widget [data]="w"></app-widget>
     }
+</div>
+
+<div>
+    <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.close()">
+        <mat-sidenav #sidenav (keydown.escape)="sidenav.close()" disableClose>
+        <button matFab (click)="sidenav.close()">
+            <mat-icon>close</mat-icon>
+        </button>
+
+        @for (widget of store.widgets(); track widget.id) {
+            <button mat-menu-item>
+                {{widget.label}}
+            </button>>
+        }
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+        <button matFab (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>

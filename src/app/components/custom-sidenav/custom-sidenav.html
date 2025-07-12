@@ -1,1 +1,10 @@
-<p>custom-sidenav works!</p>
+<mat-sidenav-container class="custom-sidenav-container">
+  <mat-sidenav value="side">
+    <mat-icon>perfil</mat-icon>
+    Perfil
+  </mat-sidenav>
+  <button mat-raised-button (click)="toggleSidenav()">Toggle Sidenav</button>
+
+  <mat-sidenav-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

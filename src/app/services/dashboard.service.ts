@@ -7,12 +7,15 @@ import { ReceitaComponent } from '../pages/dashboard/widgets/receita/receita.com
 @Injectable({
   providedIn: 'root'
 })
+
 export class DashboardService {
   widgets = signal<Widget[]>([
     {
       id: 1,
       label: 'Saldo',
-      content: SaldoComponent
+      content: SaldoComponent,
+      rows: 2,
+      cols: 2
     },
     {
       id: 2,
@@ -35,6 +38,15 @@ export class DashboardService {
 
   addWidget(w: Widget) {
     this.addedWidgets.set([...this.addedWidgets(), {...w}]);
+  }
+
+  updateWidget(id: number, widget: Partial<Widget>) {
+    const index = this.addedWidgets().findIndex(w => w.id === id);
+    if (index !== -1) {
+      const newdWidgets = [...this.addedWidgets()];
+      newdWidgets[index] = { ...newdWidgets[index], ...widget };
+      this.addedWidgets.set(newdWidgets);
+    }
   }
 
   constructor() { }
