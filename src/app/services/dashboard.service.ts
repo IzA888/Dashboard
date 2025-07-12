@@ -20,12 +20,16 @@ export class DashboardService {
     {
       id: 2,
       label: 'Despesas',
-      content: DespesasComponent
+      content: DespesasComponent,
+      rows: 1,
+      cols: 1
     },
     {
       id: 3,
       label: 'Receita',
-      content: ReceitaComponent
+      content: ReceitaComponent,
+      rows: 1,
+      cols: 1
     },
   ]);
 

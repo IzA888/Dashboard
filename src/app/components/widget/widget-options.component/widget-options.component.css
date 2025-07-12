@@ -29,5 +29,21 @@
         z-index: 3;
     }
 
+    .move-foward-button {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%);
+        right: -3px;
+        z-index: 3;
+    }
+
+    .move-backward-button {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%);
+        right: -3px;
+        z-index: 3;
+    }
+
 
 }

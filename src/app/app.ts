@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import DashboardComponents from './pages/dashboard/dashboard.components';
 
 @Component({
   selector: 'app-root',
@@ -11,3 +10,4 @@ import DashboardComponents from './pages/dashboard/dashboard.components';
 export class App {
   protected title = 'Dashboard';
 }
+

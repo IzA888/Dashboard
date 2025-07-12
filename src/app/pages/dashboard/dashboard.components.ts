@@ -8,7 +8,7 @@ import { MatSidenavModule, MatSidenav } from "@angular/material/sidenav";
 
 
 @Component({
-  selector: 'app-dashoard.components',
+  selector: 'app-dashboard',
   imports: [WidgetComponent, MatButtonModule, MatIconModule, MatMenuModule, MatSidenavModule],
   providers: [DashboardService],
   templateUrl: './dashboard.components.html',
