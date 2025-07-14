@@ -1,6 +1,9 @@
-<div class="container mat-elevation-z3">
+<div class="container mat-elevation-z3"
+    [style.backgroundColor]="data().backgroundColor ?? 'white'"
+    [style.color]="data().color ?? 'inherit'">
     <h3 class="m-0">{{ data().label }}</h3>
-    <button mat-icon-button class="settings-button" (click)="showOptions.set(true)">
+    <button mat-icon-button class="settings-button" (click)="showOptions.set(true)" 
+    [style.--mdc-icon-btton-incon-color]="data().color ?? 'inherit'">
         <mat-icon>settings</mat-icon>
     </button>
     <ng-contaner [ngComponentOutlet]="data().content"></ng-contaner>

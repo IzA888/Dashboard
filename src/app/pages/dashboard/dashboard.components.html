@@ -1,6 +1,14 @@
 <div class="header">
+    
+
+    <aside>
+        <a>
+            <app-custom-sidenav></app-custom-sidenav>
+        </a>
+    </aside>
 
     <h2>Dashboard app</h2>
+
 
     <button mat-raised-button [mat-menu-trigger-for]="WidgetMenu">
         <mat-icon>add_circle_outline</mat-icon>
@@ -21,31 +29,10 @@
     
 </div>
 
-<div class="dashboard-widgtes">
+<div #dashboardwidgets class="dashboard-widgtes">
     @for (w of store.addedWidgets(); track w.id) {
         <app-widget [data]="w"></app-widget>
     }
 </div>
 
-<div class="container">
-    <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.close()">
-    <mat-sidenav mode="side" #sidenav (keydown.escape)="sidenav.close()" disableClose>
-    <button matFab (click)="sidenav.close()">
-        <mat-icon>close</mat-icon>
-    </button>
-
-    @for (widget of store.widgets(); track widget.id) {
-        <button mat-menu-item>
-            {{widget.label}}
-        </button>>
-    }
-    </mat-sidenav>
-
-    <mat-sidenav-content>
-    <button matFab (click)="sidenav.open()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    </mat-sidenav-content>
-    </mat-sidenav-container>
-</div>
 

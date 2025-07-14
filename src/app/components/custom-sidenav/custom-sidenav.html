@@ -1,10 +1,21 @@
-<mat-sidenav-container class="custom-sidenav-container">
-  <mat-sidenav value="side">
-    <mat-icon>perfil</mat-icon>
-    Perfil
-  </mat-sidenav>
-  <button mat-raised-button (click)="toggleSidenav()">Toggle Sidenav</button>
+<div class="container">
+    <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.close()">
+    <mat-sidenav mode="side" #sidenav (keydown.escape)="sidenav.close()" disableClose>
+    <button matFab (click)="sidenav.close()">
+        <mat-icon>close</mat-icon>
+    </button>
 
-  <mat-sidenav-content>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    @for (widget of store.widgets(); track widget.id) {
+        <button mat-menu-item>
+            {{widget.label}}
+        </button>>
+    }
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+    <button matFab (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

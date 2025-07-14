@@ -32,17 +32,23 @@
     .move-foward-button {
         position: absolute;
         top: 50%;
-        transform: translate(-50%);
+        transform: translateY(-50%);
         right: -3px;
-        z-index: 3;
+
     }
 
     .move-backward-button {
         position: absolute;
         top: 50%;
-        transform: translate(-50%);
-        right: -3px;
-        z-index: 3;
+        transform: translateY(-50%);
+        left: -5px;
+    }
+
+    .remove-widget-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: red;
     }
 
 

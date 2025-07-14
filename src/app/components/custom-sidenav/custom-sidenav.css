@@ -1,0 +1,12 @@
+.mat-sidenav {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #fafafa;
+    color: #333;
+    background-color: var(--mat-sidenav-content-background-color, var(--mat-sys-background));
+    box-sizing: border-box;
+    display: block;
+    border-radius: 16px;
+    z-index: 1;
+}
