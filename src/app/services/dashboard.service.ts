@@ -3,7 +3,7 @@ import { Widget } from '../models/dashboard';
 import { SaldoComponent } from '../pages/dashboard/widgets/saldo/saldo';
 import { DespesasComponent } from '../pages/dashboard/widgets/despesas/despesas.component';
 import { ReceitaComponent } from '../pages/dashboard/widgets/receita/receita.components';
-import { AnalyticsComponent } from '../pages/dashboard/widgets/analytics/analytics.components';
+import { AnalyticsComponent } from '../pages/dashboard/widgets/analise/analytics.components';
 
 
 @Injectable({
