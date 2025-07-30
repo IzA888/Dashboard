@@ -130,8 +130,8 @@ export class DashboardService {
   }
 
   fetchWidgets() {
-    if (typeof localStorage !== 'undefined') {
-      const widgetsAsString = localStorage.getItem('dahsboardWidgets');
+    if (typeof window !== 'undefined' && localStorage) {
+      const widgetsAsString = window.localStorage.getItem('dahsboardWidgets');
       if(widgetsAsString) {
         const widgets = JSON.parse(widgetsAsString) as Widget[];
         widgets.forEach(widget => {
@@ -157,8 +157,8 @@ export class DashboardService {
       delete w.content;
     });
 
-    if (typeof localStorage !== 'undefined') {
-      localStorage.setItem('dashboardWidgets', JSON.stringify(widgetsWithoutContent));
+    if (typeof window !== 'undefined' && localStorage) {
+      window.localStorage.setItem('dashboardWidgets', JSON.stringify(widgetsWithoutContent));
     }
   })
 

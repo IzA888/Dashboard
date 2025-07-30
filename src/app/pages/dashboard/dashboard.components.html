@@ -1,13 +1,7 @@
 <div class="header">
-    
 
-    <aside>
-        <a>
-            <app-custom-sidenav></app-custom-sidenav>
-        </a>
-    </aside>
 
-    <h2>Dashboard app</h2>
+    <h2>Dashboard</h2>
 
 
     <button mat-raised-button [mat-menu-trigger-for]="WidgetMenu">
@@ -16,6 +10,7 @@
     </button>
 
     <mat-menu #WidgetMenu="matMenu">
+        <ng-template matMenuContent>
         @for (widget of store.WidgetstoAdd(); track widget.id) {
             <button mat-menu-item (click)="store.addWidget(widget)">
                 {{widget.label}}
@@ -25,9 +20,31 @@
                 No widgets available
             </button>>
         }
-    </mat-menu>        
-    
+        </ng-template>
+    </mat-menu>       
+
 </div>
+
+<aside>
+    <mat-sidenav-container (backdropClick)="sidenav.close()">
+        <mat-sidenav mode="side" #sidenav>
+            
+        <button matFab (click)="sidenav.close()">
+            <mat-icon>close</mat-icon>
+        </button>
+            @for (widget of store.widgets(); track widget.id) {
+                <button mat-menu-item>
+                    {{widget.label}}
+                </button>>
+            }
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <button matFab (click)="sidenav.open()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</aside>
 
 <div #dashboardwidgets class="dashboard-widgtes">
     @for (w of store.addedWidgets(); track w.id) {
